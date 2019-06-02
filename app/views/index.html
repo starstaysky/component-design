@@ -10,7 +10,36 @@
   </head>
   <body>
     <article id="app">
-      
+
     </article>
+    <a class="api a">a.html</a>
+    <a class="api b">b.html</a>
+    <a class="hash a">a.html</a>
+    <a class="hash b">b.html</a>
+    <script type="text/javascript">
+     document.querySelectorAll('.api').forEach(item => {
+       item.addEventListener('click', function(e){
+          e.preventDefault();
+          const link = item.textContent;
+          window.history.pushState({name:'api'},link,link)
+       },false)
+     })
+     window.addEventListener('popstate',(e)=>{
+        console.log(e.state)
+        console.log(location.href)
+     },false)
+
+     document.querySelectorAll('.hash').forEach(item => {
+       item.addEventListener('click', function(e){
+          e.preventDefault();
+          const link = item.textContent;
+          window.locaiton.hash= link
+       },false)
+     })
+     window.addEventListener('hashchange',(e)=>{
+        console.log(location.href)
+        console.log(location.hash)
+     },false)
+    </script>
   </body>
 </html>
