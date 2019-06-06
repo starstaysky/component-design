@@ -55,7 +55,8 @@
         "error",
         4
       ],
-      "vue/max-attributes-per-line": "off"
+      "vue/max-attributes-per-line": "off",
+      "vue/html-self-closing": "off"
     }
   },
   "eslintIgnore": [
