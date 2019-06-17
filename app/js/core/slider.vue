@@ -1,6 +1,6 @@
 <!-- The ref attr used to find the swiper instance -->
 <template>
-    <swiper :options="swiperOption" ref="mySwiper">
+    <swiper :options="swiperOption" ref="mySwiper" >
         <!-- slides -->
         <swiper-slide v-for="item in items" :key="item.href">
             <router-link :to="{name:item.href}">
@@ -19,10 +19,24 @@
 
 import { swiper, swiperSlide } from "vue-awesome-swiper"
 export default {
-    name: "Carrousel",
+    name: "Slider",
     components: {
         swiper,
         swiperSlide,
+    },
+    props: {
+        items: {
+            type: Array,
+            default() {
+                return [
+                    { },
+                ]
+            },
+        },
+        cname: {
+            type: String,
+            default: "",
+        },
     },
     data() {
         return {
@@ -36,16 +50,9 @@ export default {
                 // 所有的参数同 swiper 官方 api 参数
                 // ...
             },
-            items: {
-                type: Array,
-                default() {
-                    return [
-                        { },
-                    ]
-                },
-            },
         }
     },
+
 
     computed: {
         swiper() {
@@ -57,6 +64,6 @@ export default {
     },
 }
 </script>
-<style lang="css">
-@import '~swiper/dist/css/swiper.css'
+<style lang="scss">
+@import '~swiper/dist/css/swiper.css';
 </style>

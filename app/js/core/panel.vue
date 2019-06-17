@@ -27,7 +27,7 @@ export default {
 }
 
 </script>
-<style lang="scss">
+<style lang="scss" moudle>
 @import '../../css/element.scss';
 .pannel{
    @include panel;

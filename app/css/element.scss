@@ -1,4 +1,4 @@
-@import './layout.css';
+@import './layout.scss';
 
 @mixin btn($size:14,$color:rgb(214, 132, 132),$bgground:#fff,$radius:4px,$padding:5px){
   display:inline-block;
