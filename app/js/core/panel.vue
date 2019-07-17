@@ -7,6 +7,7 @@
 
 <script>
 export default {
+    name: "Panel",
     props: {
         cname: {
             type: String,
